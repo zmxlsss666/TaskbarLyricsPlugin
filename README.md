@@ -2,7 +2,7 @@
 一个适用于 Salt Player For Windows 的任务栏歌词插件
 ## 安装方法
 1. 从 [Release页面](https://github.com/zmxlsss666/TaskbarLyricsPlugin/releases) 下载最新版本
-2. 下载[.NET8.0桌面运行时](https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/runtime-desktop-8.0.20-windows-x64-installer)
+2. 下载并安装[.NET8.0桌面运行时](https://dotnet.microsoft.com/zh-cn/download/dotnet/thank-you/runtime-desktop-8.0.20-windows-x64-installer)
 3.  进入SPW→设置→创意工坊→模组管理→导入→TaskbarLyricsPlugin→启用
 ## 软件截图
 <img width="525" height="66" alt="image" src="https://github.com/user-attachments/assets/c2459aee-bb65-461a-9b5a-c852125bc02c" />
