@@ -4,6 +4,9 @@
 1. 从 [Release页面](https://github.com/zmxlsss666/TaskbarLyricsPlugin/releases) 下载最新版本
 2. 下载并安装[.NET8.0桌面运行时](https://aka.ms/dotnet-core-applaunch?framework=Microsoft.NETCore.App&framework_version=8.0.0&arch=x86&rid=win10-x86&gui=true)
 3.  进入SPW→设置→创意工坊→模组管理→导入→TaskbarLyricsPlugin→启用
+
+## 注意事项
+仅适配原版任务栏，对于微软商店版未做测试
 ## 软件截图
 <img width="525" height="66" alt="image" src="https://github.com/user-attachments/assets/c2459aee-bb65-461a-9b5a-c852125bc02c" />
 
