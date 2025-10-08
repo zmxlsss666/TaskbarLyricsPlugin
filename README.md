@@ -6,7 +6,7 @@
 3.  进入SPW→设置→创意工坊→模组管理→导入→TaskbarLyricsPlugin→启用
 
 ## 注意事项
-仅适配原版任务栏，对于微软商店版未做测试
+仅适配原版任务栏，对于微软商店版未做测试，目前仅任务栏对齐方式靠左可用（偷懒）
 ## 软件截图
 <img width="525" height="66" alt="image" src="https://github.com/user-attachments/assets/c2459aee-bb65-461a-9b5a-c852125bc02c" />
 
