@@ -1,0 +1,81 @@
+{
+  "configs": [
+    {
+      "title": "字体设置",
+      "config": "config.json",
+      "preferences": [
+        {
+          "key": "font_family",
+          "type": "edittext",
+          "title": "字体家族",
+          "summary": "设置歌词显示的字体家族",
+          "default_value": "default"
+        },
+        {
+          "key": "font_size",
+          "type": "seekbar",
+          "title": "字体大小",
+          "default_value": 16.0,
+          "min": 8.0,
+          "max": 72.0
+        },
+        {
+          "key": "font_color",
+          "type": "edittext",
+          "title": "字体颜色",
+          "summary": "设置歌词字体颜色（十六进制格式）",
+          "default_value": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "title": "显示设置",
+      "config": "config.json",
+      "preferences": [
+        {
+          "key": "background_color",
+          "type": "edittext",
+          "title": "背景颜色",
+          "summary": "设置歌词背景颜色（十六进制格式）",
+          "default_value": "#000000"
+        },
+        {
+          "key": "alignment",
+          "type": "list",
+          "title": "对齐方式",
+          "summary": "设置歌词文本对齐方式",
+          "entries": ["左对齐", "居中", "右对齐"],
+          "entry_values": ["left", "center", "right"],
+          "default_value": "center"
+        },
+        {
+          "key": "show_translation",
+          "type": "switch",
+          "title": "显示翻译",
+          "summary": "是否显示歌词翻译",
+          "default_value": true
+        }
+      ]
+    },
+    {
+      "title": "操作",
+      "config": "config.json",
+      "preferences": [
+        {
+          "type": "button",
+          "title": "应用配置",
+          "summary": "立即应用当前配置",
+          "arrow_type": "none",
+          "on_click": "com.zmxl.taskbarlyrics.config.ConfigManager.applyConfig"
+        },
+        {
+          "type": "button",
+          "title": "重置为默认值",
+          "summary": "恢复所有设置为默认值",
+          "arrow_type": "none",
+          "on_click": "com.zmxl.taskbarlyrics.config.ConfigManager.resetToDefault"
+        }
+      ]
+    }
+  ]
+}

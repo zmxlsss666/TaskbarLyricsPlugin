@@ -7,11 +7,11 @@ pluginManagement {
 }
 
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS) 
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         mavenCentral()
         maven { url = uri("https://jitpack.io") }
     }
 }
 
-rootProject.name = "spw-taskbarlyrics-plugin"
+rootProject.name = "TaskbarLyricsPlugin"

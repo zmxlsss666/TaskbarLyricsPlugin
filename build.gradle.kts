@@ -3,13 +3,16 @@ plugins {
     kotlin("jvm") version "1.9.22"
     kotlin("kapt") version "1.9.22"
 }
+
 java {
     sourceCompatibility = JavaVersion.VERSION_21
     targetCompatibility = JavaVersion.VERSION_21
 }
+
 kotlin {
     jvmToolchain(21)
 }
+
 dependencies {
     compileOnly("com.github.Moriafly:spw-workshop-api:0.1.0-dev14")
     kapt("com.github.Moriafly:spw-workshop-api:0.1.0-dev14")
@@ -20,25 +23,17 @@ dependencies {
     implementation("org.json:json:20210307")
     implementation(kotlin("stdlib-jdk8"))
     implementation("com.google.code.gson:gson:2.10.1")
+    compileOnly ("net.jthink:jaudiotagger:3.0.1")
 }
+
 val pluginClass = "com.zmxl.taskbarlyrics.TaskbarLyricsPlugin"
 val pluginId = "TaskbarLyricsPlugin"
-val pluginVersion = "1.0.0"
+val pluginVersion = "2.0.0"
 val pluginProvider = "zmxl"
-val PluginHasConfig = "false"
+val PluginHasConfig = "true"
 val PluginOpenSourceUrl = "https://github.com/zmxlsss666/TaskbarLyricsPlugin"
-val PluginDescription = "任务栏歌词，必须安装.NET8.0运行时方可使用"
-sourceSets {
-    main {
-        resources {
-            srcDirs("src/main/resources")
-            include("exe/**")
-        }
-    }
-}
-tasks.withType<ProcessResources> {
-    duplicatesStrategy = DuplicatesStrategy.INCLUDE
-}
+val PluginDescription = "一个适用于 Salt Player For Windows 的任务栏歌词插件"
+
 tasks.named<Jar>("jar") {
     manifest {
         attributes["Plugin-Class"] = pluginClass
@@ -49,12 +44,8 @@ tasks.named<Jar>("jar") {
         attributes["Plugin-Open-Source-Url"] = PluginOpenSourceUrl
         attributes["Plugin-Description"] = PluginDescription
     }
-    from(sourceSets.main.get().resources) {
-        include("exe/**")
-        into("resources")
-    }
-    duplicatesStrategy = DuplicatesStrategy.INCLUDE
 }
+
 tasks.register<Jar>("plugin") {
     archiveBaseName.set("plugin-$pluginId-$pluginVersion")
     into("classes") {
@@ -65,5 +56,4 @@ tasks.register<Jar>("plugin") {
         from(configurations.runtimeClasspath.get().filter { it.name.endsWith("jar") })
     }
     archiveExtension.set("zip")
-    duplicatesStrategy = DuplicatesStrategy.INCLUDE
 }
