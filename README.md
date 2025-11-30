@@ -1,5 +1,5 @@
 # TaskbarLyricsPlugin
-一个适用于 Salt Player For Windows 的任务栏歌词插件
+一个适用于 Salt Player For Windows 的任务栏歌词插件，支持Steam版和微软商店版
 ## 安装方法
 1. 从 [Release页面](https://github.com/zmxlsss666/TaskbarLyricsPlugin/releases) 下载最新版本
 2. 解压TaskbarLyricsPlugin.zip
