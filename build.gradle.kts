@@ -1,7 +1,7 @@
 plugins {
     id("java-library")
-    kotlin("jvm") version "1.9.22"
-    kotlin("kapt") version "1.9.22"
+    kotlin("jvm") version "2.3.0"
+    kotlin("kapt") version "2.3.0"
 }
 
 java {
@@ -14,21 +14,16 @@ kotlin {
 }
 
 dependencies {
-    compileOnly("com.github.Moriafly:spw-workshop-api:0.1.0-dev14")
-    kapt("com.github.Moriafly:spw-workshop-api:0.1.0-dev14")
-    implementation("org.eclipse.jetty:jetty-server:11.0.15")
-    implementation("org.eclipse.jetty:jetty-servlet:11.0.15")
-    compileOnly("net.java.dev.jna:jna:5.10.0")
-    compileOnly("net.java.dev.jna:jna-platform:5.10.0")
+    compileOnly("com.github.Moriafly:spw-workshop-api:0.1.0-dev20")
+    kapt("com.github.Moriafly:spw-workshop-api:0.1.0-dev20")
     implementation("org.json:json:20210307")
     implementation(kotlin("stdlib-jdk8"))
-    implementation("com.google.code.gson:gson:2.10.1")
-    compileOnly ("net.jthink:jaudiotagger:3.0.1")
+    compileOnly("net.jthink:jaudiotagger:3.0.1")
 }
 
 val pluginClass = "com.zmxl.taskbarlyrics.TaskbarLyricsPlugin"
 val pluginId = "TaskbarLyricsPlugin"
-val pluginVersion = "2.0.0"
+val pluginVersion = "3.0.0"
 val pluginProvider = "zmxl"
 val PluginHasConfig = "true"
 val PluginOpenSourceUrl = "https://github.com/zmxlsss666/TaskbarLyricsPlugin"

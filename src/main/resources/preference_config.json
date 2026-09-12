@@ -1,14 +1,14 @@
 {
   "configs": [
     {
-      "title": "字体设置",
+      "title": "歌词文本",
       "config": "config.json",
       "preferences": [
         {
           "key": "font_family",
           "type": "edittext",
           "title": "字体家族",
-          "summary": "设置歌词显示的字体家族",
+          "summary": "设置歌词显示的字体家族（default 表示使用Microsoft YaHei字体）",
           "default_value": "default"
         },
         {
@@ -23,7 +23,7 @@
           "key": "font_color",
           "type": "edittext",
           "title": "字体颜色",
-          "summary": "设置歌词字体颜色（十六进制格式）",
+          "summary": "十六进制 RGB（如 #FFB6C1）",
           "default_value": "#FFFFFF"
         }
       ]
@@ -36,24 +36,96 @@
           "key": "background_color",
           "type": "edittext",
           "title": "背景颜色",
-          "summary": "设置歌词背景颜色（十六进制格式）",
-          "default_value": "#000000"
+          "summary": "十六进制 RGB；#000000=纯黑，#00000000=全透明",
+          "default_value": "#00000000"
         },
         {
           "key": "alignment",
           "type": "list",
-          "title": "对齐方式",
-          "summary": "设置歌词文本对齐方式",
+          "title": "对齐方式（在任务栏歌词上双击并拖动可微调）",
+          "summary": "设置歌词文本在任务栏中的对齐方式",
           "entries": ["左对齐", "居中", "右对齐"],
           "entry_values": ["left", "center", "right"],
           "default_value": "center"
         },
+        {
+          "key": "position_offset_x",
+          "type": "seekbar",
+          "title": "水平位置偏移",
+          "summary": "以对齐方式为原点，在任务栏歌词上双击并拖动可微调；值为负向左、为正向右",
+          "default_value": 0.0,
+          "min": -500.0,
+          "max": 500.0
+        },
+        {
+          "key": "position_offset_y",
+          "type": "seekbar",
+          "title": "垂直位置偏移",
+          "summary": "以对齐方式为原点，在任务栏歌词上双击并拖动可微调；值为负向上、为正向下",
+          "default_value": 0.0,
+          "min": -200.0,
+          "max": 200.0
+        },
+        {
+          "key": "auto_hide_fullscreen",
+          "type": "switch",
+          "title": "全屏应用时自动隐藏",
+          "summary": "检测到全屏应用（如游戏）时自动隐藏任务栏歌词",
+          "default_value": true
+        }
+      ]
+    },
+    {
+      "title": "翻译设置",
+      "config": "config.json",
+      "preferences": [
         {
           "key": "show_translation",
           "type": "switch",
           "title": "显示翻译",
           "summary": "是否显示歌词翻译",
           "default_value": true
+        },
+        {
+          "key": "translation_font_size",
+          "type": "seekbar",
+          "title": "翻译字体大小",
+          "default_value": 14.0,
+          "min": 8.0,
+          "max": 72.0
+        },
+        {
+          "key": "translation_font_color",
+          "type": "edittext",
+          "title": "翻译字体颜色",
+          "summary": "十六进制 RGB，如 #CCCCCC",
+          "default_value": "#CCCCCC"
+        }
+      ]
+    },
+    {
+      "title": "歌词过滤",
+      "config": "config.json",
+      "preferences": [
+        {
+          "key": "lyric_filter_regex",
+          "type": "edittext",
+          "title": "正则表达式过滤",
+          "summary": "匹配到的歌词行将不被显示（留空表示不过滤），例如 (?i)纯音乐|间奏",
+          "default_value": ""
+        }
+      ]
+    },
+    {
+      "title": "卡拉 OK 高亮",
+      "config": "config.json",
+      "preferences": [
+        {
+          "key": "highlight_color",
+          "type": "edittext",
+          "title": "高亮颜色",
+          "summary": "逐字(卡拉OK)歌词高亮色，十六进制 RGB，如 #00FFFF",
+          "default_value": "#00FFFF"
         }
       ]
     },
@@ -62,16 +134,16 @@
       "config": "config.json",
       "preferences": [
         {
-          "type": "button",
-          "title": "应用配置",
-          "summary": "立即应用当前配置",
-          "arrow_type": "none",
-          "on_click": "com.zmxl.taskbarlyrics.config.ConfigManager.applyConfig"
+          "key": "debug_logs",
+          "type": "switch",
+          "title": "调试日志",
+          "summary": "开启后插件向控制台输出调试日志（供排查问题），默认关闭",
+          "default_value": false
         },
         {
           "type": "button",
           "title": "重置为默认值",
-          "summary": "恢复所有设置为默认值",
+          "summary": "删除配置文件并恢复所有设置（含歌词位置与过滤）为默认值",
           "arrow_type": "none",
           "on_click": "com.zmxl.taskbarlyrics.config.ConfigManager.resetToDefault"
         }
