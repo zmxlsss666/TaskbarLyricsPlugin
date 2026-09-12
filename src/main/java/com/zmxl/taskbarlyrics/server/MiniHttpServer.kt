@@ -17,8 +17,6 @@ import java.util.concurrent.Executors
 import java.util.concurrent.atomic.AtomicBoolean
 
 /**
- * 极简 HTTP/1.1 服务器（自写，零第三方依赖），仅支持插件所需的 GET 端点与 SSE 长连接。
- *
  * SPW 的运行时是 Compose 打包的精简 JRE，不含 JDK 的 `jdk.httpserver` 模块，因此
  * `com.sun.net.httpserver.HttpServer` 不可用（NoClassDefFoundError）。这里用原生
  * [ServerSocket] 实现同等能力，彻底避免依赖缺失问题。
