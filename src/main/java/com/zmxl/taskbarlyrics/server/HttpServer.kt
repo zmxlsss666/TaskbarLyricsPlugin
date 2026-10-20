@@ -572,7 +572,7 @@ class HttpServer(private val port: Int) {
         private val writer: ChunkedWriter,
         private val onClosed: (SseSession) -> Unit
     ) {
-        private val writeLock = Object()
+        private val writeLock = Any()
         @Volatile private var closed = false
         private var lastTitle: String? = null
         private var lastPos = Long.MIN_VALUE

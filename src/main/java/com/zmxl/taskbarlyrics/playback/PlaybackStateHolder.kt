@@ -93,6 +93,15 @@ object PlaybackStateHolder {
         spwLines.clear()
     }
 
+    /** 用官方完整歌词时间轴替换本地缓存（空列表表示当前无可用时间轴）。 */
+    fun setSpwLyrics(lines: List<PlaybackExtensionPoint.LyricsLine>) {
+        val newLines = lines
+            .map { SpwLyricLine(it.startTime, it.pureMainText, it.pureSubText ?: "") }
+            .sortedBy { it.time }
+        spwLines.clear()
+        spwLines.addAll(newLines)
+    }
+
     fun addSpwLyricLine(time: Long, mainText: String, subText: String) {
         val idx = spwLines.indexOfFirst { it.time == time }
         if (idx >= 0) {

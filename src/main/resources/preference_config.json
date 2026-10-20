@@ -7,8 +7,8 @@
         {
           "key": "font_family",
           "type": "edittext",
-          "title": "字体家族",
-          "summary": "设置歌词显示的字体家族（default 表示使用Microsoft YaHei字体）",
+          "title": "字体",
+          "summary": "设置歌词显示的字体（default 表示使用Microsoft YaHei字体）",
           "default_value": "default"
         },
         {
@@ -133,13 +133,6 @@
       "title": "操作",
       "config": "config.json",
       "preferences": [
-        {
-          "key": "debug_logs",
-          "type": "switch",
-          "title": "调试日志",
-          "summary": "开启后插件向控制台输出调试日志（供排查问题），默认关闭",
-          "default_value": false
-        },
         {
           "type": "button",
           "title": "重置为默认值",

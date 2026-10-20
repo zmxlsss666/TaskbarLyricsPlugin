@@ -47,10 +47,6 @@ class SpwPlaybackExtension : PlaybackExtensionPoint {
         PlaybackStateHolder.updatePlaybackFactor(position, System.currentTimeMillis())
     }
 
-    override fun updateLyrics(mediaItem: PlaybackExtensionPoint.MediaItem): String? {
-        return onBeforeLoadLyrics(mediaItem)
-    }
-
     override fun onBeforeLoadLyrics(mediaItem: PlaybackExtensionPoint.MediaItem): String? {
         PlaybackStateHolder.currentMedia = mediaItem
         PlaybackStateHolder.clearSpwLyrics()
@@ -66,5 +62,10 @@ class SpwPlaybackExtension : PlaybackExtensionPoint {
                 line.pureSubText ?: ""
             )
         }
+    }
+
+    /** 官方一次给出当前歌曲的完整时间轴：直接替换本地缓存，保证切歌/重载后歌词完整。 */
+    override fun onLyricsLinesUpdated(lyricsLines: List<PlaybackExtensionPoint.LyricsLine>) {
+        PlaybackStateHolder.setSpwLyrics(lyricsLines)
     }
 }

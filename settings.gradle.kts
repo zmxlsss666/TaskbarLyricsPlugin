@@ -5,6 +5,15 @@ pluginManagement {
         gradlePluginPortal()
         maven { url = uri("https://jitpack.io") }
     }
+    resolutionStrategy {
+        eachPlugin {
+            if (requested.id.id == "com.xuncorp.spw.workshop") {
+                useModule(
+                    "com.github.Moriafly.spw-workshop-api:spw-workshop-gradle-plugin:${requested.version}"
+                )
+            }
+        }
+    }
 }
 
 dependencyResolutionManagement {

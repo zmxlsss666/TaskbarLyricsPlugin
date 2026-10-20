@@ -19,8 +19,6 @@ import kotlin.math.roundToInt
  * 任务栏歌词（Rust 客户端经 SSE 接收并应用），实现真正的设置热同步。
  */
 object ConfigManager {
-    private const val PLUGIN_ID = "TaskbarLyricsPlugin"
-
     private var spwConfigManager: SpwConfigManager? = null
     private var helper: ConfigHelper? = null
 
@@ -68,7 +66,7 @@ object ConfigManager {
     fun initialize() {
         if (spwConfigManager != null) return
         try {
-            val manager = WorkshopApi.manager.createConfigManager(PLUGIN_ID)
+            val manager = WorkshopApi.manager.createConfigManager()
             spwConfigManager = manager
             helper = manager.getConfig()
 

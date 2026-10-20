@@ -1,14 +1,13 @@
 @file:OptIn(UnstableSpwWorkshopApi::class)
 package com.zmxl.taskbarlyrics
 
-import org.pf4j.Plugin
-import org.pf4j.PluginWrapper
-import com.zmxl.taskbarlyrics.server.HttpServer
-import com.zmxl.taskbarlyrics.config.ConfigManager
-import com.xuncorp.spw.workshop.api.WorkshopApi
+import com.xuncorp.spw.workshop.api.PluginContext
+import com.xuncorp.spw.workshop.api.SpwPlugin
 import com.xuncorp.spw.workshop.api.UnstableSpwWorkshopApi
+import com.zmxl.taskbarlyrics.config.ConfigManager
+import com.zmxl.taskbarlyrics.server.HttpServer
 
-class TaskbarLyricsPlugin(wrapper: PluginWrapper) : Plugin(wrapper) {
+class TaskbarLyricsPlugin(pluginContext: PluginContext) : SpwPlugin(pluginContext) {
     private lateinit var httpServer: HttpServer
 
     override fun start() {
